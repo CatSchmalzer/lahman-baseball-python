@@ -9,29 +9,15 @@ First with SQL, now with python/pandas.
 
 With this, comes some rules.
 You still need to connect to the Lahman Baseball database (that's where all your data lives).
-However, for this project you are not allowed to use "complicated" SQL.
-Complicated meaning: joins, data cleaning, case when statements, etc.
 
 For every question you answer, this should be the extent of your SQL:
 ```sql
 SELECT * FROM <table name>;
 ```
 
+Everything else should be done in python
 Feel free to pull in multiple tables.
-Do not use filters, or manipulate the select statement.
 The purpose of this exercise is to learn how to connect to a postgres database using python and pandas! Feel free to reference your SQL scripts from before and use them to validate your results.
-
-## Setting up
-
-We have provided an `environment.yaml` file for you to use (similar to the geospatial exercise).
-Let's go ahead and use this to install our dependencies.
-
-From Terminal or Anaconda Prompt run:
-```bash
-conda env create -f environment.yaml
-conda activate sql-connection
-jupyter notebook
-```
 
 ## Connecting to a database in python (basic)
 
@@ -58,9 +44,6 @@ Sort this list in descending order by the total salary earned.
 Which Vanderbilt player earned the most money in the majors?
 * Using the fielding table, group players into three groups based on their position: label players with position OF as "Outfield", those with position "SS", "1B", "2B", and "3B" as "Infield", and those with position "P" or "C" as "Battery".
 Determine the number of putouts made by each of these three groups in 2016.
-* Find the player who had the most success stealing bases in 2016, where __success__ is measured as the percentage of stolen base attempts which are successful.
-(A stolen base attempt results either in a stolen base or being caught stealing.)
-Consider only players who attempted _at least_ 20 stolen bases.
 * From 1970 – 2016, what is the largest number of wins for a team that did not win the world series?
 What is the smallest number of wins for a team that did win the world series?
 Doing this will probably result in an unusually small number of wins for a world series champion – determine why this is the case.
