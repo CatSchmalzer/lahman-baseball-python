@@ -19,6 +19,14 @@ Everything else should be done in python
 Feel free to pull in multiple tables.
 The purpose of this exercise is to learn how to connect to a postgres database using python and pandas! Feel free to reference your SQL scripts from before and use them to validate your results.
 
+## Before you get started
+You will need to install another package called `psycop2`
+
+From your Terminal or Anaconda Prompt run:
+```python
+conda install psycopg2
+```
+
 ## Connecting to a database in python (basic)
 
 ```python
@@ -26,14 +34,16 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # establish a database connection
-engine = create_engine("postgres+psycop2://postgres:postgres@localhost:5432/LahmanBaseball")
+engine = create_engine("postgres+psycop2://postgres:postgres@localhost:5432/<lahman_baseball_database_name>")
 
 # use the connection to run a query using pandas!
 df = pd.read_sql("SELECT * FROM batting;", con=engine)
 df.head()
 ```
 
-There are 2 notebooks already in the repo that step through additional ways for connecting.
+In the above example replace `<lahman_baseball_database_name>` with the actual name of your lahman baseball database as it appears in pgadmin
+
+In addition, there are 2 notebooks already in the repo that step through additional ways for connecting. When attempting these notebooks first try the one called `SQL Connection - Not Private`. Be sure to update the `database` argument in the second code cell with the correct name of your database. For a challenge try out the `SQL Connection - Private` notebook.
 
 ### Questions
 _these are just a subset of questions from the original Lahman Baseball exercise_
